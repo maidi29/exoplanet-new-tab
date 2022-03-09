@@ -12,10 +12,26 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: flex-end;
-    & *:first-child {
+    *:first-child {
       margin-right: 1rem;
       font-size: 1.5rem;
       color: #888;
+    }
+    &--footnote {
+      margin-top: 0.5rem;
+      *:first-child {
+        font-size: 1rem;
+      }
+      a  {
+        font-size: 1rem;
+        display: inline-block;
+        padding: 0.2rem 0.5rem;
+        border: 1px solid #888;
+        text-decoration: none;
+        &:hover {
+          background: #ffffff33
+        }
+      }
     }
   }
   &__tooltip {

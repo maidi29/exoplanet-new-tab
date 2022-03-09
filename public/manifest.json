@@ -17,7 +17,7 @@
   "permissions": [
     "storage"
   ],
-  "host_permisions": [
+  "host_permissions": [
     "https://exoplanetarchive.ipac.caltech.edu/TAP/sync",
     "https://exoplanets.nasa.gov/api/v1/planets/"
   ]
