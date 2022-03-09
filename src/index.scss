@@ -18,3 +18,24 @@ a {
     text-decoration: underline;
   }
 }
+
+#donate-button-container {
+  position: absolute;
+  top:0;
+  right:0;
+  margin-right: 1rem;
+  margin-top: 1rem;
+  color: #888;
+  text-align: right;
+  animation: hide 0s ease-in 8s forwards;
+  img {
+     margin-top: 0.5rem;
+     height: 2rem;
+   }
+}
+
+@keyframes hide {
+  to {
+    display: none;
+  }
+}

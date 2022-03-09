@@ -16,5 +16,22 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <div id="donate-button-container">
+      Support me and my product with a PayPal donation <br> 🛸 Thank you!
+      <div id="donate-button"></div>
+      <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
+      <script>
+        PayPal.Donation.Button({
+          env:'production',
+          hosted_button_id:'QS8LCPL8XBSTL',
+          image: {
+            src:'https://pics.paypal.com/00/s/MjUzNzY3NzQtYzRmNS00NmMwLTliNDAtNjEzYmQ3MzIyOTRk/file.PNG',
+            alt:'Donate with PayPal button',
+            title:'Support me and my product with a PayPal Donation',
+          }
+        }).render('#donate-button');
+      </script>
+    </div>
+
   </body>
 </html>

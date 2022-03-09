@@ -8,15 +8,15 @@
 @function box-shadow($stars) {
   $boxshadow: ();
   @for $i from 1 to $stars {
-    $boxshadow: append($boxshadow, (random(3500) + 0px) (random(3500) + 0px) (random(3) + 0px) #FFFDED, comma);
+    $boxshadow: append($boxshadow, (random(3000) + 0px) (random(2700) + 0px) (random(3) + 0px) #fff, comma);
   }
   @return $boxshadow;
 }
 
-// create random number of stars (max number ist set)
-$boxshadow-large: box-shadow(random(400));
-$boxshadow-medium: box-shadow(random(450));
-$boxshadow-small: box-shadow(random(500));
+// create random number of stars
+$boxshadow-large: box-shadow(random(400) + 200);
+$boxshadow-medium: box-shadow(random(450) + 200);
+$boxshadow-small: box-shadow(random(500) + 200);
 
 @mixin star-properties($size, $shadow, $animation, $animation-duration) {
   height: $size;
@@ -30,13 +30,13 @@ $boxshadow-small: box-shadow(random(500));
   border-radius: 3px;
 
   &.large {
-    @include star-properties(3px, $boxshadow-large, blink-large, 7s);
+    @include star-properties(4px, $boxshadow-large, blink-large, 4.5s);
   }
   &.medium {
-    @include star-properties(2px, $boxshadow-medium, blink-medium, 5s);
+    @include star-properties(3px, $boxshadow-medium, blink-medium, 3s);
   }
   &.small {
-    @include star-properties(1px, $boxshadow-small, blink-small, 3s);
+    @include star-properties(2px, $boxshadow-small, blink-small, 2s);
   }
 }
 
