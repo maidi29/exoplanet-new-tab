@@ -6,10 +6,10 @@ Chrome Extension that displays a new confirmed exoplanet in every new tab with h
 Use this Extension: https://chrome.google.com/webstore/detail/exoplanet-new-tab/lomgeabjcgmlehekkdofbmgedkapgpoe
 
 ## Examples
-![Example 1](https://github.com/maidi29/exoplanet-new-tab/blob/main/sources%20for%20webstore%20entry/screenshot.png?raw=true)
-![Example 2](https://github.com/maidi29/exoplanet-new-tab/blob/main/sources%20for%20webstore%20entry/screenshot-2.png?raw=true)
-![Example 3](https://github.com/maidi29/exoplanet-new-tab/blob/main/sources%20for%20webstore%20entry/screenshot-3.png?raw=true)
-![Example 4](https://github.com/maidi29/exoplanet-new-tab/blob/main/sources%20for%20webstore%20entry/screenshot-4.png?raw=true)
+![Example 1](https://github.com/maidi29/exoplanet-new-tab/blob/main/sources%20for%20webstore%20entry/screenshot-5.png?raw=true)
+![Example 2](https://github.com/maidi29/exoplanet-new-tab/blob/main/sources%20for%20webstore%20entry/screenshot-7.png?raw=true)
+![Example 3](https://github.com/maidi29/exoplanet-new-tab/blob/main/sources%20for%20webstore%20entry/screenshot-11.png?raw=true)
+![Example 4](https://github.com/maidi29/exoplanet-new-tab/blob/main/sources%20for%20webstore%20entry/screenshot-10.png?raw=true)
 
 ## Available Scripts
 

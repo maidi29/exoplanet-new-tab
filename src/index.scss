@@ -1,14 +1,22 @@
 @font-face {
-  font-family: Rajdhani;
-  src: url(./fonts/Rajdhani-Light.ttf);
-  font-weight: 300;
+  font-family: NotoSans;
+  src: url(./fonts/NotoSans-Regular.ttf);
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: ZenDots;
+  src: url(./fonts/ZenDots-Regular.ttf);
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 body {
   margin: 0;
-  font-family: Rajdhani, Roboto, sans-serif;
+  font-family: NotoSans, Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: #01000a; /* Old browsers */

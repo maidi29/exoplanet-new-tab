@@ -146,5 +146,18 @@ export const DefaultPlanets = [
         pl_type: "Super Earth",
         sy_dist: 1716,
         sy_snum: 1
+    },
+    {
+        disc_year: 2022,
+        pl_eqt: 2042,
+        pl_eqt_f: 3708,
+        pl_masse: 7.8,
+        pl_name: "HD 93963 A b",
+        pl_orbper: 1.04,
+        pl_rade: 1.35,
+        pl_refname: "<a refstr=SERRANO_ET_AL__2022 href=https://ui.adsabs.harvard.edu/abs/2022arXiv220713920S/abstract target=ref>Serrano et al. 2022</a>",
+        pl_type: "Gas Giant",
+        sy_dist: 82.34,
+        sy_snum: 2
     }
 ];
