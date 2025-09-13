@@ -27,7 +27,7 @@ const csvToJson = (csv: string): Exoplanet[] => {
         if (index !== 0 && index !== lines.length-1) {
             let planet = {};
             const currentLine = line.split(",");
-            headers.map((prop: string, propIndex: number) => {
+            headers.forEach((prop: string, propIndex: number) => {
                 // @ts-ignore
                 planet[prop] = currentLine[propIndex];
             })

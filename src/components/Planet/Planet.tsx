@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, useRef} from 'react';
 import './Planet.scss';
 import {getRandomElement, randomIntFromInterval} from "../../services/helpers";
 import {PlanetTextures} from "../../constants/planetTextures";
@@ -6,10 +6,10 @@ import {Exoplanet, PlanetTypes} from "../../models/exoplanet.model";
 
 export const Planet = ({planet}: {planet: Exoplanet}) => {
     const target = React.useRef<HTMLDivElement>(null)
-    let surface = planet.pl_type ? getRandomElement(PlanetTextures[planet.pl_type as PlanetTypes]) : getRandomElement(PlanetTextures[PlanetTypes.UNKNOWN]);
+    const surfaceRef = useRef<string>(planet.pl_type ? getRandomElement(PlanetTextures[planet.pl_type as PlanetTypes]) : getRandomElement(PlanetTextures[PlanetTypes.UNKNOWN]));
 
     const [style, setStyle] = useState<React.CSSProperties>({
-        "--planet-texture": `url(/images/${surface})`,
+        "--planet-texture": `url(/images/${surfaceRef.current})`,
         "--planet-color-r": randomIntFromInterval(0,255),
         "--planet-color-g": randomIntFromInterval(0,255),
         "--planet-color-b": randomIntFromInterval(0,255),
@@ -19,8 +19,8 @@ export const Planet = ({planet}: {planet: Exoplanet}) => {
     } as React.CSSProperties);
 
     useEffect(() => {
-        surface = planet.pl_type ? getRandomElement(PlanetTextures[planet.pl_type as PlanetTypes]) : getRandomElement(PlanetTextures[PlanetTypes.UNKNOWN]);
-        setStyle(Object.assign({}, style, {"--planet-texture": `url(/images/${surface})`}));
+        surfaceRef.current = planet.pl_type ? getRandomElement(PlanetTextures[planet.pl_type as PlanetTypes]) : getRandomElement(PlanetTextures[PlanetTypes.UNKNOWN]);
+        setStyle(prevStyle => Object.assign({}, prevStyle, {"--planet-texture": `url(/images/${surfaceRef.current})`}));
     },[planet]);
 
     return (

@@ -66,10 +66,6 @@ export const Info = ({planet}: {planet: Exoplanet}) => {
                 <div>{planet.sy_snum}</div>
           </div>
           <div className='info--ref'>{ReactHtmlParser(planet.pl_refname)}</div>
-          <div className='info__row info__row--footnote'>
-              <div>Like this product?</div>
-              <a href="https://www.buymeacoffee.com/maidi" target="_blank">Buy me a donut</a>
-          </div>
       </div>
   );
 }

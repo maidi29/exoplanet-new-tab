@@ -1,6 +1,12 @@
-$planet-color-r: var(--planet-color-r, random(255));
-$planet-color-g: var(--planet-color-g, random(255));
-$planet-color-b: var(--planet-color-b,random(255));
+@use "sass:math";
+
+@function random-color() {
+  @return math.random(255);
+}
+
+$planet-color-r: var(--planet-color-r, #{random-color()});
+$planet-color-g: var(--planet-color-g, #{random-color()});
+$planet-color-b: var(--planet-color-b, #{random-color()});
 $planet-texture: var(--planet-texture);
 $planet-tilt: var(--planet-tilt, 25deg);
 $rotate-speed: var(--rotate-speed, 30s);

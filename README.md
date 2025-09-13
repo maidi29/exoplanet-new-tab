@@ -28,3 +28,7 @@ Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
 Zip the build folder for upload in Chrome Web Store.
+
+## Planet Textures
+
+[https://www.solarsystemscope.com/textures/](https://www.solarsystemscope.com/textures/)

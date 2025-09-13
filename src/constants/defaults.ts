@@ -1,4 +1,3 @@
-import {transformValues} from "../services/fetch-and-process";
 
 export const DefaultPlanets = [
     {
