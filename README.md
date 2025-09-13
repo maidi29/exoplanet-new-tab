@@ -27,7 +27,7 @@ The page will reload if you make edits.
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
-Zip the build folder for upload in Chrome Web Store.
+Zip the build folder for upload in Chrome Web Store. Before building, edit the version in [manifest.json](./public/manifest.json).
 
 ## Planet Textures
 

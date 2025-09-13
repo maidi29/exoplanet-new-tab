@@ -1,6 +1,6 @@
 {
   "name": "exoplanet-newtab",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "dependencies": {
     "@types/chrome": "0.0.135",
     "@types/node": "^18.19.124",
