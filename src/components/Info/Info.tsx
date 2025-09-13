@@ -1,8 +1,7 @@
 import React from 'react';
 import './Info.scss';
 import {Exoplanet, PlanetTypes} from "../../models/exoplanet.model";
-import ReactHtmlParser from 'react-html-parser';
-import ReactTooltip from "react-tooltip";
+import parse from 'html-react-parser';
 
 const typeDesc = {
     [PlanetTypes.GAS_GIANT]: "A gas giant is a large planet mostly composed of helium and/or hydrogen. These planets, " +
