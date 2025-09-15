@@ -10,6 +10,10 @@ Use this Extension: https://chrome.google.com/webstore/detail/exoplanet-new-tab/
 ![Example 2](https://github.com/maidi29/exoplanet-new-tab/blob/main/sources%20for%20webstore%20entry/screenshot-7.png?raw=true)
 ![Example 3](https://github.com/maidi29/exoplanet-new-tab/blob/main/sources%20for%20webstore%20entry/screenshot-11.png?raw=true)
 ![Example 4](https://github.com/maidi29/exoplanet-new-tab/blob/main/sources%20for%20webstore%20entry/screenshot-10.png?raw=true)
+![Example 5](https://github.com/maidi29/exoplanet-new-tab/blob/main/sources%20for%20webstore%20entry/screenshot-12.png?raw=true)
+![Example 6](https://github.com/maidi29/exoplanet-new-tab/blob/main/sources%20for%20webstore%20entry/screenshot-13.png?raw=true)
+
+
 
 ## Available Scripts
 
