@@ -1,4 +1,5 @@
 const path = require('path');
+
 module.exports = {
     mode: "production",
     entry: "./src/background.ts",
@@ -9,11 +10,21 @@ module.exports = {
     resolve: {
         extensions: ['.ts', '.tsx']
     },
-    module:{
-        rules:[{
+    module: {
+        rules: [{
             loader: 'babel-loader',
-            test: /\.ts$|tsx/,
-            exclude: /node_modules/
+            test: /\.ts$|\.tsx$/,
+            exclude: /node_modules/,
+            options: {
+                presets: [
+                    ['@babel/preset-env', {
+                        targets: {
+                            chrome: '88'
+                        }
+                    }],
+                    '@babel/preset-typescript'
+                ]
+            }
         }]
     },
 }

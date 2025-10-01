@@ -1,6 +1,6 @@
 import React from 'react';
 import './Info.scss';
-import {Exoplanet, PlanetTypes} from "../../models/exoplanet.model";
+import { Exoplanet, PlanetTypes } from "../../models/exoplanet.model";
 import parse from 'html-react-parser';
 import ReactTooltip from "react-tooltip";
 import { usePersistentState } from '../../hooks/usePersistentState';
@@ -65,7 +65,7 @@ export const Info = ({planet}: {planet: Exoplanet}) => {
       {/* Facts */}
       <Section 
         id="facts" 
-        label={planet.pl_type ? (
+        label={planet.pl_type && planet.pl_type !== 'unknown' ? (
           <div className='info__planet-type-header'>
              <button className='info__icon' data-tip data-for='planetType' aria-label='Info about planet type'>i</button>
             <span className='info__planet-type-label'>{planet.pl_type}</span>
@@ -150,7 +150,7 @@ export const Info = ({planet}: {planet: Exoplanet}) => {
       )}
 
       {/* Tooltips rendered at component level to avoid unmounting issues */}
-      {planet.pl_type && (
+      {planet.pl_type && planet.pl_type !== 'unknown' && (
         <ReactTooltip id='planetType' className='info__tooltip' place='left' effect='solid' delayHide={150}>
           {typeDesc[planet.pl_type as PlanetTypes]}
         </ReactTooltip>

@@ -1,6 +1,6 @@
 {
   "name": "exoplanet-newtab",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "dependencies": {
     "@types/chrome": "0.0.135",
     "@types/node": "^18.19.124",
@@ -23,8 +23,8 @@
     "test": "react-scripts test",
     "prebuild": "rimraf build",
     "build": "npm-run-all build:*",
-    "build:app": "set \"INLINE_RUNTIME_CHUNK=false\" && react-scripts build",
-    "build:bg": "set \"NODE_ENV=production\" && set \"BABEL_ENV=production\" && webpack --config webpack.config.js"
+    "build:app": "INLINE_RUNTIME_CHUNK=false react-scripts build",
+    "build:bg": "NODE_ENV=production BABEL_ENV=production webpack --config webpack.config.js"
   },
   "eslintConfig": {
     "extends": [
