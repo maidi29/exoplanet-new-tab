@@ -2,7 +2,7 @@ import { Exoplanet, PlanetTypes } from "../models/exoplanet.model";
 import { formatDecimal } from "./helpers";
 
 const MAX_SUBTITLE_LENGTH = 75;
-const MAX_DESCRIPTION_LENGTH = 500;
+const MAX_DESCRIPTION_LENGTH = 1000;
 const MIN_DESCRIPTION_LENGTH = 10;
 
 const JUPITER_MASS = 317.8;
@@ -12,7 +12,7 @@ const fetchWikipediaDescription = async (planetName: string): Promise<{descripti
     try {
         const cleanName = planetName.replace(/[^a-zA-Z0-9\s-]/g, '').trim();
         const searchResponse = await fetch(
-            `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(cleanName)}`
+            `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(cleanName)}?origin=*`
         );
         if (!searchResponse.ok) return {description: null, subtitle: null};
         const data = await searchResponse.json();
@@ -36,7 +36,6 @@ const fetchWikipediaDescription = async (planetName: string): Promise<{descripti
         
         return {description, subtitle};
     } catch (error) {
-        console.error('Wikipedia API error:', error);
         return {description: null, subtitle: null};
     }
 };

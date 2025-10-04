@@ -5,6 +5,12 @@ import parse from 'html-react-parser';
 import ReactTooltip from "react-tooltip";
 import { usePersistentState } from '../../hooks/usePersistentState';
 
+const getWikipediaUrl = (planetName: string): string => {
+  const cleanName = planetName.replace(/[^\w\s-]/g, '').trim();
+  const encodedName = encodeURIComponent(cleanName);
+  return `https://en.wikipedia.org/wiki/${encodedName}`;
+};
+
 
 
 const Chevron = ({open}: {open: boolean}) => (
@@ -37,9 +43,17 @@ export const Info = ({planet}: {planet: Exoplanet}) => {
   const [tempUnit, setTempUnit] = usePersistentState<'C' | 'F'>('info.tempUnit', 'C');
   const temperatureValue = tempUnit === 'C' ? `${planet.pl_eqt} °C` : `${planet.pl_eqt_f} °F`;
 
+  const hasWikipediaArticle = !!(planet.pl_desc || planet.pl_subtitle);
+
   return (
     <div className='info'>
-      <div className='info--name'>{planet.pl_name}</div>
+      <div 
+        className={`info--name ${hasWikipediaArticle ? 'info--name-clickable' : ''}`}
+        onClick={hasWikipediaArticle ? () => window.open(getWikipediaUrl(planet.pl_name), '_blank') : undefined}
+        title={hasWikipediaArticle ? "Click to view on Wikipedia" : undefined}
+      >
+        {planet.pl_name}
+      </div>
       {planet.pl_subtitle && !planet.pl_desc && (<div className='info--subtitle'>{planet.pl_subtitle}</div>)}
 
       {planet.pl_desc && (
