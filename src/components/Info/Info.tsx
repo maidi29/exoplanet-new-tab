@@ -1,24 +1,10 @@
 import React from 'react';
 import './Info.scss';
-import { Exoplanet, PlanetTypes } from "../../models/exoplanet.model";
+import { Exoplanet } from "../../models/exoplanet.model";
 import parse from 'html-react-parser';
 import ReactTooltip from "react-tooltip";
 import { usePersistentState } from '../../hooks/usePersistentState';
 
-const typeDesc = {
-    [PlanetTypes.GAS_GIANT]: "A gas giant is a large planet mostly composed of helium and/or hydrogen. These planets, " +
-        "like Jupiter and Saturn in our solar system, don’t have hard surfaces and instead have swirling gases above a solid " +
-        "core. Gas giant exoplanets can be much larger than Jupiter, and much closer to their stars than anything found in our solar system.",
-    [PlanetTypes.NEPTUNE_LIKE]: "Neptunian exoplanets are similar in size to Neptune or Uranus in our solar system. Neptunian " +
-        "planets typically have hydrogen and helium-dominated atmospheres with cores or rock and heavier metals.",
-    [PlanetTypes.TERRESTRIAL]: "In our solar system, Earth, Mars, Mercury and Venus are terrestrial, or rocky, planets. For " +
-        "planets outside our solar system, those between half of Earth’s size to twice its radius are considered terrestrial and " +
-        "others may be even smaller. Exoplanets twice the size of Earth and larger may be rocky as well, but those are considered super-Earths.",
-    [PlanetTypes.SUPER_EARTH]: "Super-Earths — a class of planets unlike any in our solar system — are more massive than " +
-        "Earth yet lighter than ice giants like Neptune and Uranus, and can be made of gas, rock or a combination of both. " +
-        "They are between twice the size of Earth and up to 10 times its mass.",
-    [PlanetTypes.UNKNOWN]: ""
-}
 
 
 const Chevron = ({open}: {open: boolean}) => (
@@ -65,13 +51,7 @@ export const Info = ({planet}: {planet: Exoplanet}) => {
       {/* Facts */}
       <Section 
         id="facts" 
-        label={planet.pl_type && planet.pl_type !== 'unknown' ? (
-          <div className='info__planet-type-header'>
-             <button className='info__icon' data-tip data-for='planetType' aria-label='Info about planet type'>i</button>
-            <span className='info__planet-type-label'>{planet.pl_type}</span>
-           
-          </div>
-        ) : <span className='info--subtitle'>Facts</span>}
+        label={<span className='info--subtitle'>Facts</span>}
         defaultOpen={true}
       >
         <div className='info__facts'>
@@ -149,12 +129,6 @@ export const Info = ({planet}: {planet: Exoplanet}) => {
         <div className='info--ref'>{parse(planet.pl_refname)}</div>
       )}
 
-      {/* Tooltips rendered at component level to avoid unmounting issues */}
-      {planet.pl_type && planet.pl_type !== 'unknown' && (
-        <ReactTooltip id='planetType' className='info__tooltip' place='left' effect='solid' delayHide={150}>
-          {typeDesc[planet.pl_type as PlanetTypes]}
-        </ReactTooltip>
-      )}
     </div>
   );
 }

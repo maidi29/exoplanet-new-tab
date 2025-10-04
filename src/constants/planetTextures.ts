@@ -1,10 +1,10 @@
-import {PlanetTypes} from "../models/exoplanet.model";
+import { PlanetTypes } from "../models/exoplanet.model";
 
 export const PlanetTextures = {
     [PlanetTypes.GAS_GIANT]: [
         'saturn.webp', 'venus.webp', 'neptune.webp','neptunelight.webp','saturnlight.webp','venuslight.webp'
     ],
-    [PlanetTypes.NEPTUNE_LIKE]: [
+    [PlanetTypes.NEPTUNIAN]: [
         'saturn.webp', 'venus.webp', 'neptune.webp','neptunelight.webp','saturnlight.webp','venuslight.webp'
     ],
     [PlanetTypes.SUPER_EARTH]: [

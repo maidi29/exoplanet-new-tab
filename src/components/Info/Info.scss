@@ -94,19 +94,6 @@
     border-bottom: 1px dotted rgba(255,255,255,0.15);
   }
 
-  &__planet-type-header {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-left: auto;
-    justify-content: flex-end;
-  }
-
-  &__planet-type-label {
-    font-size: 1.5rem;
-    color: white;
-    font-family: NotoSans, Roboto, sans-serif;
-  }
 
   &__tooltip {
     max-width: 50%;

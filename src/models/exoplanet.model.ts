@@ -1,6 +1,6 @@
 export enum PlanetTypes {
     SUPER_EARTH = 'Super Earth',
-    NEPTUNE_LIKE = 'Neptune-like',
+    NEPTUNIAN = 'Neptune-like',
     GAS_GIANT = 'Gas Giant',
     TERRESTRIAL = 'Terrestrial',
     UNKNOWN = 'unknown'
@@ -17,6 +17,9 @@ export interface Exoplanet {
     pl_refname: string,
     disc_year: number,
     sy_snum: number, // (1 - 4),
+    pl_bmasse?: number, // best mass estimate in Earth masses
+    pl_radj?: number, // radius in Jupiter units
+    pl_bmassj?: number, // best mass estimate in Jupiter units
     pl_type?: PlanetTypes | string,
     pl_desc?: string,
     pl_subtitle?: string
@@ -54,7 +57,6 @@ export interface ItemsEntity {
     ranger_system_id: string;
     ranger_system: boolean;
     exo_id: string;
-    subtitle: string;
     categories?: (null)[] | null;
     pl_kepflag: boolean;
     pl_facility: string;
